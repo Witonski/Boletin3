@@ -18,7 +18,7 @@ public class Ejercicio2 {
 }
 
 /*
-public class ContadorNegativosTradicional {
+public class Ejercicio2 {
 
     public static void main(String[] args) {
         int[] numeros = {8, -3, 2, -7, 0, 7, 8};

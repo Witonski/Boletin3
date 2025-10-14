@@ -8,12 +8,12 @@ public class Ejercicio1 {
     public static void main(String[] args) {
         int[] numeros = {7, 3, 56, 6, 7, 2, 4, 62};
 
-        int sumarpares = 0;
+        int sumarPares = 0;
 
         for (int i = 0; i < numeros.length; i += 2) {
-            sumarpares += numeros[i];
+            sumarPares += numeros[i];
         }
 
-        System.out.println("La suma de posiciones pares es " + sumarpares);
+        System.out.println("La suma de posiciones pares es " + sumarPares);
     }
 }
