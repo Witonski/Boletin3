@@ -1,12 +1,39 @@
+import javax.swing.*;
+import java.util.Scanner;
+
 public class Practicamos {
     public static void main(String[] args) {
 
-        int[] numeros = {3, 9, 5, 65, 4};
-        int sumarPares = 0;
+        Scanner sc = new Scanner(System.in);
+        int diaSemana;
 
-        for(int i = 0; i < numeros.length; i += 2){
-            sumarPares += numeros[i];
+        System.out.println("Ingrese día de la semana ");
+        diaSemana = sc.nextInt();
+
+        switch (diaSemana){
+            case 1:
+                System.out.println("Hoy es lunes ");
+                break;
+            case 2:
+                System.out.println("Hoy es martes ");
+                break;
+            case 3:
+                System.out.println("Hoy es miércoles ");
+                break;
+            case 4:
+                System.out.println("Hoy es jueves ");
+                break;
+            case 5:
+                System.out.println("Hoy es viernes ");
+                break;
+            case 6:
+                System.out.println("Hoy es sábado ");
+                break;
+            case 7:
+                System.out.println("Hoy es domingo ");
+                break;
+            default:
+                System.out.println("Número incorrecto, saliendo del sistema");
         }
-        System.out.println("La suma de posiciones pares es " + sumarPares );
     }
 }
