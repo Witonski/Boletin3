@@ -1,5 +1,7 @@
 package Boletin_Arrays;
 
+import utils.MiEntradaSalida;
+
 public class Ejercicio4B {
 
     // Constante para la cantidad de números a generar (visible en la imagen)
@@ -22,7 +24,7 @@ public class Ejercicio4B {
         for (int i = 0; i < CANTIDAD_NUMEROS; i++) {
 
             // Genera el número aleatorio (0 a 100, inclusivo)
-            int numGenerado = MiEntradaSalidaB.generaAleatorioEntre(0, 100, true);
+            int numGenerado = MiEntradaSalida.generaAleatorioEntre(0, 100, true);
 
             // Almacena el número en el array
             generados[i] = numGenerado;
