@@ -1,3 +1,5 @@
+package Boletin_Arrays;
+
 public class BucleFor {
     public static void main(String[] args) {
         int[] x = {1,2,3,4,7,8};

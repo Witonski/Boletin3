@@ -1,3 +1,5 @@
+package Boletin_Arrays;
+
 import java.util.Scanner;
 
 public class Ejercicio3 {

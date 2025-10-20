@@ -1,3 +1,5 @@
+package Boletin_Arrays;
+
 public class Ejercicio2 {
 
     public static void main(String[] args) {
@@ -18,7 +20,7 @@ public class Ejercicio2 {
 }
 
 /*
-public class Ejercicio2 {
+public class Boletin_Arrays.Ejercicio2 {
 
     public static void main(String[] args) {
         int[] numeros = {8, -3, 2, -7, 0, 7, 8};

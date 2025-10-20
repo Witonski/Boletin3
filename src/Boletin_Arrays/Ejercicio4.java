@@ -1,3 +1,7 @@
+package Boletin_Arrays;
+
+import utils.MiEntradaSalida;
+
 public class Ejercicio4 {
 
     // Constante para definir la cantidad de números a generar
@@ -17,7 +21,7 @@ public class Ejercicio4 {
 
         // 1. Generación de 6000 números aleatorios (0 a 100, ambos incluidos)
         for (int i = 0; i < generados.length; i++) {
-            // Se asume la existencia de la clase MiEntradaSalida
+            // Se asume la existencia de la clase utils.MiEntradaSalida
             generados[i] = MiEntradaSalida.generaAleatorioEntre(0, 100, true);
         }
 

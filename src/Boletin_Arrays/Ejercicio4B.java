@@ -1,3 +1,5 @@
+package Boletin_Arrays;
+
 public class Ejercicio4B {
 
     // Constante para la cantidad de números a generar (visible en la imagen)

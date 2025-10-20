@@ -1,4 +1,4 @@
-import java.util.Scanner;
+package Boletin_Arrays;
 
 public class BucleForExtendido {
     public static void main(String[] args) {

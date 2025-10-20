@@ -1,3 +1,7 @@
+package Boletin_Arrays;
+
+import utils.MiEntradaSalida;
+
 import java.util.Scanner;
 import java.util.Arrays;
 
@@ -8,7 +12,7 @@ public class Ejercicio6Segundo {
     final static int MAX_VALOR_ALEATORIO = 100; // Los números estarán entre 0 y 100
 
     // --------------------------------------------------------------------------
-    // A. Método de generación de array (Similar a Ejercicio5)
+    // A. Método de generación de array (Similar a Boletin_Arrays.Ejercicio5)
     // --------------------------------------------------------------------------
 
     /**
