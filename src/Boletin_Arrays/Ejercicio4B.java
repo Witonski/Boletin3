@@ -34,11 +34,7 @@ public class Ejercicio4B {
             digitos[numGenerado % 10]++;
         }
 
-        /* * NOTA: En las imágenes originales, había un bucle for-each separado
-         * para la suma. Se ha simplificado, integrando la suma y el conteo
-         * de dígitos en el primer bucle para mayor eficiencia, como se ve
-         * en la imagen c7e8c3.jpg (líneas 11-12).
-         */
+
 
         // 2. Cálculo y muestra de la media
         media = suma / CANTIDAD_NUMEROS;
