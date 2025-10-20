@@ -4,16 +4,33 @@ de un array de enteros.
  */
 
 public class Ejercicio1 {
-
     public static void main(String[] args) {
-        int[] numeros = {7, 3, 56, 6, 7, 2, 4, 62};
 
-        int sumarPares = 0;
 
-        for (int i = 0; i < numeros.length; i += 2) {
-            sumarPares += numeros[i];
+      /* // RESULETO CON BUCLE FOR
+      int [] enteros = {2, 7, 9, 4, 3, 6};
+      int sumaPares = 0;
+
+      for (int f = 0; f < enteros.length; f += 2){
+          sumaPares += enteros[f];
+      }
+        System.out.println("La suma de las posiciones pares es = " + sumaPares);*/
+
+        // RESUELTO CON BUCLE WHILE
+        int[] enteros = {2, 7, 9, 4, 3, 6};
+        int sumaPares = 0;
+        int f = 0;
+
+
+        while (f < enteros.length) {
+            sumaPares += enteros[f];
+            f += 2;
         }
-
-        System.out.println("La suma de posiciones pares es " + sumarPares);
+        System.out.println("La suma de las posiciones pares es = " + sumaPares);
     }
 }
+
+
+
+
+

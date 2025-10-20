@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Ejercicio6 {
+public class Ejercicio6Primero {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -11,7 +11,7 @@ public class Ejercicio6 {
 
 
         if (tamano <= 0) {
-            System.out.println("Introduce un número positivo.");
+            System.out.println("Introduce un número positivo > 0.");
             return;
         }
 

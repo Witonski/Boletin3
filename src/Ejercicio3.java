@@ -3,9 +3,10 @@ import java.util.Scanner;
 public class Ejercicio3 {
 
     public static void main(String[] args) {
+
         Scanner sc = new Scanner(System.in);
 
-        // 1. Entrada de Tamaño y Corrección de Negativos
+
         System.out.print("Introduzca las posiciones que tendrá el array: ");
         int numElementos = sc.nextInt();
 
