@@ -11,16 +11,8 @@ public class Ejercicio6Segundo {
     final static int TAMANO_ARRAY = 15;
     final static int MAX_VALOR_ALEATORIO = 100; // Los números estarán entre 0 y 100
 
-    // --------------------------------------------------------------------------
-    // A. Método de generación de array (Similar a Boletin_Arrays.Ejercicio5)
-    // --------------------------------------------------------------------------
 
-    /**
-     * Genera un array de enteros del tamaño especificado, llenándolo con
-     * números aleatorios en el rango [0, MAX_VALOR_ALEATORIO].
-     * @param tamano La cantidad de posiciones que tendrá el array.
-     * @return El array de enteros generado.
-     */
+
     public static int[] generaArrayAleatorio(int tamano) {
         int[] array = new int[tamano];
 
@@ -31,9 +23,7 @@ public class Ejercicio6Segundo {
         return array;
     }
 
-    // --------------------------------------------------------------------------
-    // B. Método de comprobación de valor (Solución al ejercicio)
-    // --------------------------------------------------------------------------
+
 
 
     public static boolean contieneValor(int[] array, int valorBuscado) {
@@ -46,16 +36,13 @@ public class Ejercicio6Segundo {
         return false; // Fracaso: el bucle terminó y el valor no fue encontrado
     }
 
-    // --------------------------------------------------------------------------
-    // C. Método main para la ejecución y la interfaz de usuario
-    // --------------------------------------------------------------------------
 
     public static void main(String[] args) {
 
-        // 1. Generar el array aleatorio
+        // Generar el array aleatorio
         int[] miArray = generaArrayAleatorio(TAMANO_ARRAY);
 
-        // 2. Mostrar información al usuario
+        // Mostrar información al usuario
         System.out.println("Se ha generado un array aleatorio de " + TAMANO_ARRAY + " elementos.");
         System.out.println("Los números generados están en el rango [0, " + MAX_VALOR_ALEATORIO + "].");
         System.out.println("Contenido del Array: " + Arrays.toString(miArray));
