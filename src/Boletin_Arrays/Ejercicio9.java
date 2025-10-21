@@ -19,7 +19,7 @@ public class Ejercicio9 {
 
     private static int[] arrayOrdenado(int[] array, int opcion) {
 
-        // Siempre ordenar de forma ascendente primero (lo más eficiente en Java)
+        // Siempre ordenar de forma ascendente primero
         Arrays.sort(array);
 
         // Si la opción es 2 (Descendente), revertir el array ya ordenado.

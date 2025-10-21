@@ -14,46 +14,46 @@ public class Ejercicio11 {
     public static void main(String[] args) {
 
         int[] array1 = {1, 2, 1, 3, 3, 5, 6, 2, 9, 5, 6};
-        int[] array2 = {4, 2, 5, 9, 1, 4, 6, 2, 10, 4, 7};
+        int[] array2 = {4, 2, 5, 9, 1, 4, 6, 2, 10, 4, 7, 9};
 
         System.out.println("Array 1: " + Arrays.toString(array1));
         System.out.println("Array 2: " + Arrays.toString(array2));
 
-        int[] interseccion = arrayComun(array1, array2);
-        System.out.println("\nElementos en común: " + Arrays.toString(interseccion));
-    }
+        int[] array3 = new int[Math.min(array1.length, array2.length)];
+        int elementosArrayFinal = 0;
 
-
-    private static int[] arrayComun(int[] array1, int[] array2) {
-
-        // Usar un HashSet para almacenar los elementos ÚNICOS del array 1.
-        // Esto elimina los duplicados de la primera lista.
-        Set<Integer> set1 = new HashSet<>();
-        for (int elemento : array1) {
-            set1.add(elemento);
-        }
-
-        // Usar un segundo Set para almacenar la INTERSECCIÓN (los comunes).
-        Set<Integer> setComun = new HashSet<>();
-
-        // Recorrer el array 2 y comprobar si cada elemento está en el Set 1.
-        for (int elemento : array2) {
-            // Si el elemento del array 2 ya existe en set1, significa que es común.
-            if (set1.contains(elemento)) {
-                // Lo agregamos a setComun. HashSet asegura que el resultado final no tenga duplicados.
-                setComun.add(elemento);
+        for (int i = 0; i < array1.length; i++) {
+            if (contieneElemento(array2, array1[i]) && !contieneElemento(array3, array1[i], elementosArrayFinal)){
+                array3[elementosArrayFinal] = array1[i];
+                elementosArrayFinal++;
             }
         }
 
-        // Convertir el Set de la Intersección a un array primitivo (int[]).
-        int[] nuevoArray = new int[setComun.size()];
-        int i = 0;
-
-        for (int elemento : setComun) {
-            nuevoArray[i] = elemento;
-            i++;
+        int[] arrayADevolver = new int[elementosArrayFinal];
+        for (int i = 0; i < elementosArrayFinal; i++){
+            arrayADevolver[i] = array3[i];
         }
 
-        return nuevoArray;
+
+        System.out.println(Arrays.toString(arrayADevolver));
+
+    }
+
+    public static boolean contieneElemento(int[] array, int elementoABuscar, int max){
+        for (int i = 0; i < max; i++) {
+            if (array[i] == elementoABuscar){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static boolean contieneElemento(int[] array, int elementoABuscar){
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == elementoABuscar){
+                return true;
+            }
+        }
+        return false;
     }
 }

@@ -1,48 +1,46 @@
-package Boletin_Arrays;
-
-import utils.MiEntradaSalida;
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Practicamos {
 
     public static void main(String[] args) {
+        int[] array1 = {1, 2, 1, 3, 3, 5, 6, 2, 9, 5, 6};
+        int[] array2 = {4, 2, 5, 9, 1, 4, 6, 2, 10, 4, 7};
 
-        int[] array = {9, 1, 4, 2, 12, 6, 8};
+        // Lista para almacenar los elementos comunes encontrados
+        List<Integer> elementosComunes = new ArrayList<>();
 
-        // El usuario elige 1 (Ascendente) o 2 (Descendente)
-        int opcion = MiEntradaSalida.leerEnteroEnRango("Opcion 1: Orden ascendente. Opcion 2: Orden descendente.", 1, 2);
+        System.out.println("Elementos comunes:");
 
-        System.out.println("Array Original: " + Arrays.toString(array));
-        System.out.println("Array Ordenado: " + Arrays.toString(arrayOrdenado(array, opcion)));
-    }
+        // Bucle for para recorrer el primer array (array1)
+        for (int i = 0; i < array1.length; i++) {
+            int elementoAComparar = array1[i];
 
-    /**
-     * Ordena el array de forma ascendente o descendente según la opción.
-     * @param array  El array con el que se trabaja.
-     * @param opcion 1 para ascendente, 2 para descendente.
-     * @return El array ordenado.
-     */
-    private static int[] arrayOrdenado(int[] array, int opcion) {
+            // Verificamos si el elemento ya se ha agregado a la lista de comunes
+            // Esto evita que se muestren duplicados en el resultado final
+            if (!elementosComunes.contains(elementoAComparar)) {
 
-        // 1. Siempre ordenar de forma ascendente primero (lo más eficiente en Java)
-        Arrays.sort(array);
+                // Bucle for anidado para recorrer el segundo array (array2)
+                for (int j = 0; j < array2.length; j++) {
 
-        // 2. Si la opción es 2 (Descendente), revertir el array ya ordenado.
-        if (opcion == 2) {
+                    // Condición para encontrar la coincidencia
+                    if (elementoAComparar == array2[j]) {
+                        // Si hay coincidencia, lo agregamos a la lista
+                        elementosComunes.add(elementoAComparar);
 
-            int n = array.length;
+                        // Imprimimos el elemento encontrado
+                        System.out.print(elementoAComparar + " ");
 
-            // Revertir: Solo se necesita iterar hasta la mitad (n/2) para intercambiar pares.
-            for (int i = 0; i < n / 2; i++) {
-
-                // Intercambio (Swap) del elemento del inicio con su simétrico del final
-                int temp = array[i];
-                array[i] = array[n - 1 - i]; // El elemento final se mueve al principio
-                array[n - 1 - i] = temp;     // El elemento del principio se mueve al final
+                        // Usamos 'break' para salir del bucle interno tan pronto como
+                        // se encuentre la primera coincidencia y evitar buscar más duplicados
+                        // de este mismo número en array2
+                        break;
+                    }
+                }
             }
         }
 
-        // Devuelve el array, que ahora está ordenado.
-        return array;
+        // Los elementos comunes son: 1 2 5 6 9
+        // El orden de aparición puede variar.
     }
 }
