@@ -11,7 +11,7 @@ public class Ejercicio7 {
 
     public static void main(String[] args) {
 
-        int tamanio = MiEntradaSalida.leerEnteroPositivo("Introduce el tamaño de array: ");
+        int tamanio = MiEntradaSalida.leerEnteroPositivoMayorQueCero("Introduce el tamaño de array: ");
         int[] array = new int[tamanio];
 
         // Llenar el array con valores introducidos por el usuario

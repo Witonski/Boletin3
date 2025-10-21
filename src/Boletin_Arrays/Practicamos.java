@@ -1,78 +1,53 @@
 package Boletin_Arrays;
 
-import java.util.Random;
 import java.util.Arrays;
-import java.util.Scanner;
 
-public class Practicamos {
-
-    // Método para generar un array aleatorio (Basado en la fuente [1] y código previo)
-    public static int[] generarArrayAleatorio(int tamano) {
-        if (tamano <= 0) {
-            return new int[0];
-        }
-
-        // Crear el contenedor (array)
-        int[] arrayAleatorio = new int[tamano];
-
-        // Herramienta de aleatoriedad
-        Random random = new Random();
-
-        // Llenar el array
-        for (int i = 0; i < tamano; i++) {
-            arrayAleatorio[i] = random.nextInt(1001);
-        }
-        return arrayAleatorio;
-    }
-
-    // Método CLAVE: Comprueba si el array contiene el valor buscado
-    public static boolean contieneValor(int[] array, int valorBuscado) {
-
-
-        for (int elemento : array) {
-
-            // Si el elemento actual es igual al que estamos buscando...
-            if (elemento == valorBuscado) {
-                // ¡Lo encontramos! Devolvemos verdadero y salimos inmediatamente del método.
-                return true;
-            }
-        }
-
-        // Si el bucle terminó (recorrimos todo el array) y nunca encontramos el valor:
-        return false;
-    }
+public class Practicamos
+{
 
     public static void main(String[] args) {
 
-        // Configuramos la herramienta para leer la entrada del usuario
-        Scanner scanner = new Scanner(System.in);
+        int[] arrayDesordenado = {9, 1, 4, 12, 2, 8, 5, 6};
 
-        // PASO 1: Generar el array
-        int tamanoArray = 15;
-        int[] miArray = generarArrayAleatorio(tamanoArray);
+        System.out.println("Array Original: " + Arrays.toString(arrayDesordenado));
 
-        System.out.println("El array aleatorio generado (tamaño " + tamanoArray + ") es:");
-        System.out.println(Arrays.toString(miArray));
+        // Llamada al método de ordenación de burbuja
+        int[] arrayOrdenado = ordenarBurbuja(arrayDesordenado);
 
-        // PASO 2: Pedir el valor a buscar
-        System.out.print("\nIntroduce el número entero que deseas buscar (entre 0 y 1000): ");
+        System.out.println("Array Ordenado: " + Arrays.toString(arrayOrdenado));
+    }
 
-        if (scanner.hasNextInt()) {
-            int valorBuscado = scanner.nextInt();
+    /**
+     * Ordena un array de enteros de menor a mayor utilizando el algoritmo de la burbuja (Bubble Sort).
+     * El método modifica el array original.
+     * @param array El array de enteros a ordenar.
+     * @return El mismo array, ahora ordenado de forma ascendente.
+     */
+    private static int[] ordenarBurbuja(int[] array) {
 
-            // PASO 3: Ejecutar la búsqueda
-            boolean encontrado = contieneValor(miArray, valorBuscado);
+        int n = array.length;
 
-            // PASO 4: Mostrar el resultado
-            if (encontrado) {
-                System.out.println("\n¡Éxito! El valor " + valorBuscado + " SÍ se encuentra en el array.");
-            } else {
-                System.out.println("\nResultado: El valor " + valorBuscado + " NO se encuentra en el array.");
+        // Bucle exterior: Controla cuántas pasadas completas se necesitan.
+        // Se necesitan n-1 pasadas.
+        for (int i = 0; i < n - 1; i++) {
+
+            // Bucle interior: Compara elementos adyacentes e intercambia.
+            // En cada pasada (i), el elemento más grande "burbujea" hasta el final.
+            // Por eso, la condición es n - 1 - i (para ignorar los elementos ya ordenados al final).
+            for (int j = 0; j < n - 1 - i; j++) {
+
+                // Comparación: Si el elemento actual es MAYOR que el siguiente (orden incorrecto para ASCENDENTE)
+                if (array[j] > array[j + 1]) {
+
+                    // Intercambio (Swap): Se utiliza una variable temporal (temp) para intercambiar los valores.
+                    int temp = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = temp;
+                }
             }
-        } else {
-            System.out.println("Error: Entrada inválida. Por favor, ingresa un número entero.");
         }
 
-        scanner.close();
+        // Se devuelve el array modificado.
+        return array;
     }
 }

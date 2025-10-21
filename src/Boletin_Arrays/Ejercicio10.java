@@ -21,7 +21,7 @@ public class Ejercicio10 {
 
     private static int[] eliminarDuplicados(int[] array) {
 
-        // 1. Crear un HashSet a partir del array.
+
         // Un HashSet solo almacena valores únicos, eliminando automáticamente los duplicados.
         // Primero convertimos el array primitivo (int[]) a un stream de Integer.
         HashSet<Integer> setUnico = new HashSet<>();
@@ -29,7 +29,7 @@ public class Ejercicio10 {
             setUnico.add(elemento);
         }
 
-        // 2. Convertir el HashSet de nuevo a un array de int[].
+
 
         // Creamos un nuevo array primitivo del tamaño exacto del Set (solo elementos únicos).
         int[] nuevoArray = new int[setUnico.size()];
