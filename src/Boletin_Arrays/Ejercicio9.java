@@ -9,48 +9,35 @@ public class Ejercicio9 {
 
         int[] array = {9, 1, 4, 2, 12, 6, 8};
 
-        // El usuario decide si quiere orden inverso (reverse = true) o ascendente (reverse = false)
-        // Usamos leerEnteroEnRango para obtener 1 (NO reverse) o 2 (SÍ reverse)
+        // El usuario elige 1 (Ascendente) o 2 (Descendente)
         int opcion = MiEntradaSalida.leerEnteroEnRango("Opcion 1: Orden ascendente. Opcion 2: Orden descendente.", 1, 2);
 
-        // Convertimos la opción entera del usuario en el booleano 'reverse'
-        // true si eligen 2 (descendente), false si eligen 1 (ascendente)
-        boolean ordenInverso = (opcion == 2);
-
-        System.out.println("Array original: " + Arrays.toString(array));
-        System.out.println("Resultado: " + Arrays.toString(arrayOrdenado(array, ordenInverso)));
+        System.out.println("Array Original: " + Arrays.toString(array));
+        System.out.println("Array Ordenado: " + Arrays.toString(arrayOrdenado(array, opcion)));
     }
 
 
-    private static int[] arrayOrdenado(int[] array, boolean reverse) {
+    private static int[] arrayOrdenado(int[] array, int opcion) {
 
-        // 1. ORDEN ASCENDENTE BASE
-        // Utilizamos el método eficiente de Java para el orden ascendente (menor a mayor)
+        // Siempre ordenar de forma ascendente primero (lo más eficiente en Java)
         Arrays.sort(array);
 
-        // 2. ORDEN DESCENDENTE (SI 'reverse' es true)
-        if (reverse) {
-
-            // Si se pide orden inverso, revertimos el array ya ordenado.
-            // Solo necesitamos recorrer la mitad del array, intercambiando pares.
+        // Si la opción es 2 (Descendente), revertir el array ya ordenado.
+        if (opcion == 2) {
 
             int n = array.length;
 
+            // Revertir: Solo se necesita iterar hasta la mitad (n/2) para intercambiar pares.
             for (int i = 0; i < n / 2; i++) {
 
-                // Elemento que está al principio
-                int elementoDelPrincipio = array[i];
-
-                // Elemento que está al final, en la posición simétrica
-                int elementoDelFinal = array[n - 1 - i];
-
-                // Intercambio (Swap)
-                int temp = elementoDelPrincipio;
-                array[i] = elementoDelFinal;
-                array[n - 1 - i] = temp;
+                // Intercambio (Swap) del elemento del inicio con su simétrico del final
+                int temp = array[i];
+                array[i] = array[n - 1 - i]; // El elemento final se mueve al principio
+                array[n - 1 - i] = temp;     // El elemento del principio se mueve al final
             }
         }
-        // Devuelve el array, ya sea en orden ascendente o descendente.
+
+        // Devuelve el array, que ahora está ordenado.
         return array;
     }
 }

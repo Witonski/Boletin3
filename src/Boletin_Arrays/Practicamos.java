@@ -1,53 +1,48 @@
 package Boletin_Arrays;
 
+import utils.MiEntradaSalida;
 import java.util.Arrays;
 
-public class Practicamos
-{
+public class Practicamos {
 
     public static void main(String[] args) {
 
-        int[] arrayDesordenado = {9, 1, 4, 12, 2, 8, 5, 6};
+        int[] array = {9, 1, 4, 2, 12, 6, 8};
 
-        System.out.println("Array Original: " + Arrays.toString(arrayDesordenado));
+        // El usuario elige 1 (Ascendente) o 2 (Descendente)
+        int opcion = MiEntradaSalida.leerEnteroEnRango("Opcion 1: Orden ascendente. Opcion 2: Orden descendente.", 1, 2);
 
-        // Llamada al método de ordenación de burbuja
-        int[] arrayOrdenado = ordenarBurbuja(arrayDesordenado);
-
-        System.out.println("Array Ordenado: " + Arrays.toString(arrayOrdenado));
+        System.out.println("Array Original: " + Arrays.toString(array));
+        System.out.println("Array Ordenado: " + Arrays.toString(arrayOrdenado(array, opcion)));
     }
 
     /**
-     * Ordena un array de enteros de menor a mayor utilizando el algoritmo de la burbuja (Bubble Sort).
-     * El método modifica el array original.
-     * @param array El array de enteros a ordenar.
-     * @return El mismo array, ahora ordenado de forma ascendente.
+     * Ordena el array de forma ascendente o descendente según la opción.
+     * @param array  El array con el que se trabaja.
+     * @param opcion 1 para ascendente, 2 para descendente.
+     * @return El array ordenado.
      */
-    private static int[] ordenarBurbuja(int[] array) {
+    private static int[] arrayOrdenado(int[] array, int opcion) {
 
-        int n = array.length;
+        // 1. Siempre ordenar de forma ascendente primero (lo más eficiente en Java)
+        Arrays.sort(array);
 
-        // Bucle exterior: Controla cuántas pasadas completas se necesitan.
-        // Se necesitan n-1 pasadas.
-        for (int i = 0; i < n - 1; i++) {
+        // 2. Si la opción es 2 (Descendente), revertir el array ya ordenado.
+        if (opcion == 2) {
 
-            // Bucle interior: Compara elementos adyacentes e intercambia.
-            // En cada pasada (i), el elemento más grande "burbujea" hasta el final.
-            // Por eso, la condición es n - 1 - i (para ignorar los elementos ya ordenados al final).
-            for (int j = 0; j < n - 1 - i; j++) {
+            int n = array.length;
 
-                // Comparación: Si el elemento actual es MAYOR que el siguiente (orden incorrecto para ASCENDENTE)
-                if (array[j] > array[j + 1]) {
+            // Revertir: Solo se necesita iterar hasta la mitad (n/2) para intercambiar pares.
+            for (int i = 0; i < n / 2; i++) {
 
-                    // Intercambio (Swap): Se utiliza una variable temporal (temp) para intercambiar los valores.
-                    int temp = array[j];
-                    array[j] = array[j + 1];
-                    array[j + 1] = temp;
-                }
+                // Intercambio (Swap) del elemento del inicio con su simétrico del final
+                int temp = array[i];
+                array[i] = array[n - 1 - i]; // El elemento final se mueve al principio
+                array[n - 1 - i] = temp;     // El elemento del principio se mueve al final
             }
         }
 
-        // Se devuelve el array modificado.
+        // Devuelve el array, que ahora está ordenado.
         return array;
     }
 }
