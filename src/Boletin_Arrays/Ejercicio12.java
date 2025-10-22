@@ -15,14 +15,14 @@ public class Ejercicio12 {
 
 
     private static int[] ordenaBurbuja(int[] array) {
-        int aux;
+        int temporal;
 
         for (int i = 0; i < array.length - 1; i++) {
             for (int j = 0; j < array.length - 1; j++) {
-                if (array[j] > array[j + 1]) { //si numero actual > numero siguiente
-                    aux = array[j];
+                if (array[j] > array[j + 1]) {
+                    temporal = array[j];
                     array[j] = array[j + 1];
-                    array[j + 1] = aux;
+                    array[j + 1] = temporal;
                 }
             }
         }
