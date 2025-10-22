@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class Ejercicio11 {
 
     /*
-     * Crea un método que acepte 2 arrays, y devuelva un nuevo array con los elementos
+     * Crea un metodo que acepte 2 arrays, y devuelva un nuevo array con los elementos
      * que ambos arrays tienen en común (la intersección).
      */
 
@@ -19,7 +19,7 @@ public class Ejercicio11 {
 
         //Creamos un array temporal (array3) con el tamaño justo y necesario para guardar la intersección
         // de los dos arrays originales.
-        // Math.min calcula la longitud del array más corto entre array1 y array2 y garantiza que haya espcio
+        // Math.min calcula la longitud del array más corto entre array1 y array2 y garantiza que haya espacio
         // suficiente para todos los elementos comunes.
         int[] array3 = new int[Math.min(array1.length, array2.length)];
 
@@ -27,9 +27,9 @@ public class Ejercicio11 {
         // el próximo resultado en array3.
         int elementosArrayFinal = 0;
 
-        for (int i = 0; i < array1.length; i++) {
-            if (contieneElemento(array2, array1[i]) && !contieneElemento(array3, array1[i], elementosArrayFinal)){
-                array3[elementosArrayFinal] = array1[i];
+        for (int j : array1) {
+            if (contieneElemento(array2, j) && !contieneElemento(array3, j, elementosArrayFinal)) {
+                array3[elementosArrayFinal] = j;
                 elementosArrayFinal++;
             }
         }
