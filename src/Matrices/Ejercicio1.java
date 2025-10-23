@@ -5,11 +5,10 @@ valor booleano.
  */
 public class Ejercicio1 {
     public static void main(String[] args) {
-        // 1. Crear una matriz de prueba
         int[][] matriz = {
                 {10, 20, 30},
                 {40, -5, 60},
-                {70, 80, -90}
+                {70, 80, 90}
         };
 
 
