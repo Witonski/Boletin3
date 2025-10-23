@@ -1,5 +1,9 @@
 package Matrices;
+/*
+1. Crea un metodo que compruebe si en una matriz hay algún valor negativo, y devuelva un
+valor booleano.
 
+ */
 public class Ejercicio2 {
 
 

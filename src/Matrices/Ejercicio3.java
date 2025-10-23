@@ -1,5 +1,11 @@
 package Matrices;
 
+/*
+3. Crea un metodo que reciba una matriz e imprima, en una sola línea, los elementos de la
+misma, leídos por filas:
+1 3 5 --> La salida es: 1 3 5 0 2 7
+0 2 7
+ */
 public class Ejercicio3 {
 
 
