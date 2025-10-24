@@ -25,8 +25,7 @@ public class Ejercicio5 {
 
     public static void imprimirPorColumnas(int[][] matriz) {
 
-        // Bucle exterior: Controla la COLUMNA (j). Va desde 0 hasta el total de columnas.
-        // El total de columnas se obtiene con matriz[0].length.
+
         for (int j = 0; j < matriz[0].length; j++){
 
             // Bucle interior: Controla la FILA (i). Va desde 0 hasta el total de filas (matriz.length).
