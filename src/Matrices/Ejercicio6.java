@@ -6,4 +6,18 @@ misma, pero leídos por columna, empezando por los últimos índices:
 0 2 7
  */
 public class Ejercicio6 {
+    public static void main(String[] args) {
+        int [][] matriz = {
+                {1,3,5},
+                {0,2,7}
+        };
+        ultimosIndices(matriz);
+    }
+    public static void ultimosIndices(int [][] matriz){
+        for(int j = matriz[0].length -1; j>= 0; j--){
+            for(int i = matriz.length - 1; i >= 0; i--){
+                System.out.print(matriz[i][j] + " ");
+            }
+        }
+    }
 }
