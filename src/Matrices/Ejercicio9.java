@@ -32,7 +32,6 @@ public class Ejercicio9 {
         System.out.println("\nMatriz No Simétrica es Simétrica Eje X: " + matricesSimetricas(matrizNoSimetrica));
     }
 
-
     public static boolean matricesSimetricas(int[][] matriz) {
 
         int numFilas = matriz.length;
@@ -49,7 +48,6 @@ public class Ejercicio9 {
                 return false;
             }
 
-            // Recorremos los elementos de las filas i y j para compararlos.
             for (int k = 0; k < numColumnas; k++) {
                 if (matriz[i][k] != matriz[j][k]) {
                     return false;

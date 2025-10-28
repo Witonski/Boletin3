@@ -16,22 +16,21 @@ no es simétrica, pues no cumple dicha propiedad.
 public class Ejercicio10 {
 
     public static void main(String[] args) {
-        int[][] matrizSimetricaY = {
+        int[][] matriz1 = {
                 {1, 3, 0, 3, 1},
                 {4, 2, 7, 2, 4},
                 {6, 1, 9, 1, 6},
                 {0, 8, 8, 8, 0}
         };
-        int[][] matrizNoSimetrica = {
+        int[][] matriz2 = {
                 {1, 4, 6},
                 {2, 1, 3}
         };
 
-        System.out.println("Matriz Simétrica Y es Simétrica Eje Y: " + ejeSimetrica(matrizSimetricaY));
-        System.out.println("Matriz No Simétrica es Simétrica Eje Y: " + ejeSimetrica(matrizNoSimetrica));
+        System.out.println("Es simétrica matriz1 ? " + ejeSimetrica(matriz1));
+        System.out.println("Es simétrica matriz2 ? " + ejeSimetrica(matriz2));
     }
     public static boolean ejeSimetrica(int[][] matriz) {
-
         int numFilas = matriz.length;
 
         if (numFilas == 0 || matriz[0].length <= 1) {
@@ -40,9 +39,9 @@ public class Ejercicio10 {
         int numColumnas = matriz[0].length;
 
         for (int i = 0; i < numFilas; i++) {
-            for (int k = 0; k < numColumnas / 2; k++) {
-                int l = numColumnas - 1 - k;
-                if (matriz[i][k] != matriz[i][l]) {
+            for (int j = 0; j < numColumnas / 2; j++) {
+                int l = numColumnas - 1 - j;
+                if (matriz[i][j] != matriz[i][l]) {
                     return false;
                 }
             }
