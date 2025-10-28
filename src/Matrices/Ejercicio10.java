@@ -27,26 +27,21 @@ public class Ejercicio10 {
                 {2, 1, 3}
         };
 
-        System.out.println("Matriz Simétrica Y es Simétrica Eje Y: " + esSimetricaEjeY(matrizSimetricaY));
-        System.out.println("Matriz No Simétrica es Simétrica Eje Y: " + esSimetricaEjeY(matrizNoSimetrica));
+        System.out.println("Matriz Simétrica Y es Simétrica Eje Y: " + ejeSimetrica(matrizSimetricaY));
+        System.out.println("Matriz No Simétrica es Simétrica Eje Y: " + ejeSimetrica(matrizNoSimetrica));
     }
-
-
-    public static boolean esSimetricaEjeY(int[][] matriz) {
+    public static boolean ejeSimetrica(int[][] matriz) {
 
         int numFilas = matriz.length;
 
         if (numFilas == 0 || matriz[0].length <= 1) {
             return true;
         }
-
         int numColumnas = matriz[0].length;
 
         for (int i = 0; i < numFilas; i++) {
             for (int k = 0; k < numColumnas / 2; k++) {
-
                 int l = numColumnas - 1 - k;
-
                 if (matriz[i][k] != matriz[i][l]) {
                     return false;
                 }
