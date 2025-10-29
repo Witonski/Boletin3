@@ -23,10 +23,6 @@ public class Ejercicio8 {
 
 
     public static int[][] sumarMatrices(int[][] matrizA, int[][] matrizB) {
-        if (matrizA.length != matrizB.length || matrizA[0].length != matrizB[0].length) {
-            System.out.println("Error: Las matrices deben ser del mismo tamaño para sumarse.");
-            return null;
-        }
         int[][] matrizResultado = new int[matrizA.length][matrizA[0].length];
 
         for (int i = 0; i < matrizA.length; i++) {
