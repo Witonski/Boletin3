@@ -13,47 +13,26 @@ Pero la matriz
 2 1 3
 no es simétrica, pues no cumple dicha propiedad.
  */
-public class Ejercicio9 {
-    public static void main(String[] args) {
 
-        int[][] matrizSimetrica = {
-                {1, 3, 5, 6},
-                {4, 2, 0, 8},
-                {4, 2, 0, 8},
-                {1, 3, 5, 6}
-        };
 
-        int[][] matrizNoSimetrica = {
-                {1, 4, 6},
-                {2, 1, 3}
-        };
+    public class Ejercicio9{
+        public static boolean simetrica(int[][] matriz) {
+            for (int i = 0; i < matriz.length / 2; i++) {
+                for (int j = 0; j < matriz[i].length; j++) {
+                    if (matriz[i][j] != matriz[matriz.length - 1 - i][j]) {
+                        return false;
+                    }
 
-        System.out.println("\nMatriz Simétrica es Simétrica Eje X: " + matricesSimetricas(matrizSimetrica));
-        System.out.println("\nMatriz No Simétrica es Simétrica Eje X: " + matricesSimetricas(matrizNoSimetrica));
-    }
-
-    public static boolean matricesSimetricas(int[][] matriz) {
-
-        int numFilas = matriz.length;
-        if (numFilas <= 1) {
-            return true;
-        }
-
-        for (int i = 0; i < numFilas / 2; i++) {
-            int j = numFilas - 1 - i;
-
-            int numColumnas = matriz[i].length;
-
-            if (matriz[j] == null || matriz[j].length != numColumnas) {
-                return false;
-            }
-
-            for (int k = 0; k < numColumnas; k++) {
-                if (matriz[i][k] != matriz[j][k]) {
-                    return false;
                 }
+
             }
+            return true;
+
         }
-        return true;
+
+        public static void main(String[] args) {
+            int[][] numeros = {{1, 2, 3, 4}, {5, 6, 7, 8}, {1, 2, 3, 4}, {5, 6, 7, 8}, {1, 2, 3, 4}};
+
+            System.out.println("La matriz es simetrica? " + simetrica(numeros));
     }
 }
