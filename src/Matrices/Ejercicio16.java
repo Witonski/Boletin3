@@ -1,53 +1,42 @@
 package Matrices;
-
 public class Ejercicio16 {
 
-    public static int[][] contarAdyacentesPares(int[][] matriz) {
-        int filas = matriz.length;
-        if (filas == 0) return new int[0][0]; // Manejo de matriz vacía
-        int columnas = matriz[0].length;
-        int[][] resultado = new int[filas][columnas];
 
-        int[] dx = {-1, -1, -1, 0, 0, 1, 1, 1};
-        int[] dy = {-1, 0, 1, -1, 1, -1, 0, 1};
-
-        for (int i = 0; i < filas; i++) {
-            for (int j = 0; j < columnas; j++) {
-                int contadorPares = 0;
-
-                for (int k = 0; k < 8; k++) {
-                    int ni = i + dx[k];
-                    int nj = j + dy[k];
-
-                    if (ni >= 0 && ni < filas && nj >= 0 && nj < columnas) {
-                        if (matriz[ni][nj] % 2 == 0) {
-                            contadorPares++;
-                        }
-                    }
-                }
-                resultado[i][j] = contadorPares;
-            }
-        }
-        return resultado;
-    }
-
-    public static void main(String[] args) {
-        int[][] matrizOriginal = {
-                {1, 2, 3, 4, 5},
-                {6, 7, 8, 9, 0},
-                {3, 2, 1, 4, 5},
-                {9, 5, 8, 6, 7},
-                {0, 9, 8, 5, 4}
-        };
-
-        int[][] matrizResultado = contarAdyacentesPares(matrizOriginal);
-
-        System.out.println("Matriz Resultado:");
-        for (int[] fila : matrizResultado) {
-            for (int valor : fila) {
-                System.out.printf("%2d ", valor);
+    public static void main(String[] args) {  //Ejemplo de uso que imprime la matriz resultado
+        int[][] matriz = {{1, 0, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}};
+        int[][] resultado = generarMatrizResultado(matriz);
+        for (int i = 0; i < resultado.length; i++) {
+            for (int j = 0; j < resultado[0].length; j++) {
+                System.out.print(resultado[i][j] + " ");
             }
             System.out.println();
         }
+    }
+
+    public static boolean esPar(int valor) {  //Función para determinar si un número es par
+        return valor % 2 == 0;
+    }
+
+    public static int contarAdyacentesPares(int[][] matriz, int fila, int col) {  //Función para contar números pares adyacentes
+        int contador = 0;
+        for (int i = fila - 1; i <= fila + 1; i++) {  //Dentro del rango de filas y columnas detecta las adyacentes incluidas las diagonales
+            for (int j = col - 1; j <= col + 1; j++) {
+                if (i == fila && j == col) continue;
+                if (i >= 0 && i < matriz.length && j >= 0 && j < matriz[0].length) {
+                    if (esPar(matriz[i][j])) contador++;
+                }
+            }
+        }
+        return contador;
+    }
+
+    public static int[][] generarMatrizResultado(int[][] matriz) {  //Función para generar la matriz resultado
+        int[][] resultado = new int[matriz.length][matriz[0].length];
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[0].length; j++) {
+                resultado[i][j] = contarAdyacentesPares(matriz, i, j);
+            }
+        }
+        return resultado;
     }
 }

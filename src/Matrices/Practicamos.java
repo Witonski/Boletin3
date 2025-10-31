@@ -1,39 +1,23 @@
 package Matrices;
 
-/*
-9. Crea un metodo que compruebe si una matriz pasada por parámetro es simétrica en
-función del eje X. Es decir, la matriz
-1 3 5 6
-4 2 0 8
-4 2 0 8
-1 3 5 6
-es simétrica en función de su eje X, porque si invirtiésemos el orden en el que leemos las
-filas, la matriz se vería igual.
-Pero la matriz
-1 4 6
-2 1 3
-no es simétrica, pues no cumple dicha propiedad.
- */
+public class Practicamos {
 
-
-public class Practicamos{
-   public static boolean simetrica(int[][] matriz) {
-      for (int i = 0; i < matriz.length / 2; i++) {
-         for (int j = 0; j < matriz[i].length; j++) {
-            if(matriz[i][j] != matriz[matriz.length - 1 - i][j]){
-               return false;
-            }
-
-         }
-
-      }
-      return true;
-
+   public static boolean esPar(int valor) {
+      return valor % 2 == 0;
    }
 
-   public static void main(String[] args) {
-      int[][] numeros = {{1, 2, 3, 4}, {5, 6, 7, 8}, {1, 2, 3, 4}, {5, 6, 7, 8}, {1, 2, 3, 4}};
-
-      System.out.println("La matriz es simetrica? " + simetrica(numeros));
+   public static int contarAdyacentesPares(int[][] matriz, int fila, int col) {
+      int contador = 0;
+      for (int i = fila - 1; i <= fila + 1; i++) {
+         for (int j = col - 1; j <= col + 1; j++) {
+            if (i == fila && j == col) continue;
+            if (i >= 0 && i < matriz.length && j >= 0 && j < matriz[0].length) {
+               if (esPar(matriz[i][j])) contador++;
+            }
+         }
+      }
+      return contador;
    }
 }
+
+
