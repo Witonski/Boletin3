@@ -14,39 +14,23 @@ Pero la matriz
 no es simétrica, pues no cumple dicha propiedad.
  */
 public class Ejercicio10 {
-
-    public static void main(String[] args) {
-        int[][] matriz1 = {
-                {1, 3, 0, 3, 1},
-                {4, 2, 7, 2, 4},
-                {6, 1, 9, 1, 6},
-                {0, 8, 8, 8, 0}
-        };
-        int[][] matriz2 = {
-                {1, 4, 6},
-                {2, 1, 3}
-        };
-
-        System.out.println("Es simétrica matriz1 ? " + ejeSimetrica(matriz1));
-        System.out.println("Es simétrica matriz2 ? " + ejeSimetrica(matriz2));
-    }
-    public static boolean ejeSimetrica(int[][] matriz) {
-        int numFilas = matriz.length;
-
-        if (numFilas == 0 || matriz[0].length <= 1) {
-            return true;
-        }
-        int numColumnas = matriz[0].length;
-
-        for (int i = 0; i < numFilas; i++) {
-            for (int j = 0; j < numColumnas / 2; j++) {
-                int l = numColumnas - 1 - j;
-                if (matriz[i][j] != matriz[i][l]) {
+    public static boolean matrizEsSimetricaAlEjeY(int[][] matriz) {
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[0].length / 2; j++) {
+                if (matriz[i][j] != matriz[i][matriz[0].length - 1 - j]) {
                     return false;
                 }
             }
         }
-
         return true;
     }
+    public static void main(String[] args) {
+        int[][] matriz1 = {{1, 2, 1}, {4, 5, 4}, {7, 8, 7}};
+        int[][] matriz2 = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+
+        System.out.println("¿Matriz 1 es Simetrico?: " + matrizEsSimetricaAlEjeY(matriz1));
+        System.out.println("¿Matriz 2 es Simetrico?: " + matrizEsSimetricaAlEjeY(matriz2));
+    }
 }
+
+

@@ -18,27 +18,15 @@ public class Ejercicio8 {
         };
         System.out.println(" ");
         System.out.println("--- Suma de Matrices ---");
-        int[][] matrizResultado = sumarMatrices(matrizA, matrizB);
-
-        if (matrizResultado != null) {
-            System.out.println("\nMatriz Resultado (A + B):");
-            imprimirMatriz(matrizResultado);
+       imprimirMatriz(sumarMatrices(matrizA, matrizB));
         }
-    }
+
 
     public static int[][] sumarMatrices(int[][] matrizA, int[][] matrizB) {
+        int[][] matrizResultado = new int[matrizA.length][matrizA[0].length];
 
-        if (matrizA.length != matrizB.length || matrizA[0].length != matrizB[0].length) {
-            System.out.println("Error: Las matrices deben ser del mismo tamaño para sumarse.");
-            return null;
-        }
-        int filas = matrizA.length;
-        int columnas = matrizA[0].length;
-
-        int[][] matrizResultado = new int[filas][columnas];
-
-        for (int i = 0; i < filas; i++) {
-            for (int j = 0; j < columnas; j++) {
+        for (int i = 0; i < matrizA.length; i++) {
+            for (int j = 0; j < matrizA[0].length; j++) {
                 matrizResultado[i][j] = matrizA[i][j] + matrizB[i][j];
             }
         }
@@ -55,4 +43,5 @@ public class Ejercicio8 {
             System.out.println("|");
         }
     }
-}
+    }
+

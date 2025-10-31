@@ -31,7 +31,6 @@ public class Ejercicio7 {
             if (matrizA[i].length != matrizB[i].length) {
                 return false;
             }
-            //Comprueba si los elementos son iguales
             for (int j = 0; j < matrizA[i].length; j++) {
                 if (matrizA[i][j] != matrizB[i][j]) {
                     return false;
