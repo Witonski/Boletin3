@@ -24,7 +24,7 @@ public class Ejercicio16 {
 
 
     public static boolean esPar(int valor) {
-        return valor % 2 == 0;
+        return valor % 2 == 0; //Revisa si el elemnto es par y devuelve true
     }
 
     public static int contarAdyacentesPares(int[][] matriz, int fila, int col) {
@@ -33,7 +33,7 @@ public class Ejercicio16 {
             for (int j = col - 1; j <= col + 1; j++) {
                 if (i == fila && j == col) continue;
                 if (i >= 0 && i < matriz.length && j >= 0 && j < matriz[0].length) {
-                    if (esPar(matriz[i][j])) contador++;
+                    if (esPar(matriz[i][j])) contador++; //Llama al metodo es par y si el elemento de la matriz es true aumenta el contador en 1.
                 }
             }
         }
@@ -41,7 +41,7 @@ public class Ejercicio16 {
     }
 
     public static int[][] generarMatrizResultado(int[][] matriz) {
-        int[][] resultado = new int[matriz.length][matriz[0].length];
+        int[][] resultado = new int[matriz.length][matriz[0].length];  //Crea una matriz de 5 filas y 5 columnas y todos sus elementos iniciales son 0.
         for (int i = 0; i < matriz.length; i++) {
             for (int j = 0; j < matriz[0].length; j++) {
                 resultado[i][j] = contarAdyacentesPares(matriz, i, j);
