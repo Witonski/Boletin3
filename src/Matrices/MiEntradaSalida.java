@@ -1,4 +1,4 @@
-package util;
+package Matrices;
 
 import java.util.Scanner;
 
@@ -17,7 +17,7 @@ public class MiEntradaSalida {
         while (flag) {
             // Pedimos el entero por pantalla.
             System.out.println(mensaje);
-            // Comprobamos si el usuario está introduciendo algo correcto usando la excepción del método parseInt.
+            // Comprobamos si el usuario está introduciendo algo correcto usando la excepción del metodo parseInt.
             try {
                 integer = Integer.parseInt(sc.nextLine());
                 // Si llegamos hasta aquí, es porque el usuario ha introducido un dato correcto.

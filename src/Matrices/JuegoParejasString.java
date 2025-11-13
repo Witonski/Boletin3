@@ -1,4 +1,4 @@
-package app.app;
+package Matrices;
 
 import util.MiEntradaSalida;
 
