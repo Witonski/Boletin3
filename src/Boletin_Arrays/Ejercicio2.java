@@ -4,13 +4,11 @@ package Boletin_Arrays;
  */
 public class Ejercicio2 {
     public static void main(String[] args) {
-        // Array de ejemplo para la prueba
+
         int[] miArray = {5, -10, 2, -3, 0, -8, 15, -1};
 
-        // Variable para llevar la cuenta, inicializada en 0
         int contador = 0;
 
-        // Recorrer el array de principio a fin
         for (int f = 0; f < miArray.length; f++) {
             // Condición: Si el elemento actual es menor que cero (negativo)
             if (miArray[f] < 0) {
@@ -18,8 +16,6 @@ public class Ejercicio2 {
                 contador++;
             }
         }
-
-        // Mostrar el resultado final
         System.out.println("El total de números negativos es: " + contador);
     }
 }

@@ -1,22 +1,21 @@
 package Boletin_Arrays;
-
+/*
+2. Crea un programa que detecte cuántos números negativos hay en un array de enteros.
+ */
 public class Practicamos {
-
     public static void main(String[] args) {
+        int[] array = {4,7,-3,-6,7,-4};
+        int contador = 0;
 
-            int [] array = {0, 7, 10, 8, 9, 3, 2};
-            int resultado = 0;
+        for(int f = 0; f < array.length; f++){
+            if (array[f] < 0){
+                contador++;
 
-            for (int i = 0; i < array.length; i += 2){
-                resultado += array[i];
             }
-        System.out.println("La suma de las posiciones pares es = " + resultado);
 
-
+        }
+        System.out.println("Hay " + contador + " números negativos");
     }
 }
-
-
-
 
 
