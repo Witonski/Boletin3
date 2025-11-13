@@ -1,6 +1,6 @@
 package Matrices;
 
-import util.MiEntradaSalida;
+
 
 public class JuegoParejas {
     private static final int TAM = 4;
